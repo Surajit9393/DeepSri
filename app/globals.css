@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll for all anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global image behavior */
+img {
+  image-rendering: optimizeQuality;
+  -webkit-user-drag: none;
+}
+
+/* Shine animation used in Hero button */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.hover\:before\:animate-shine:hover::before {
+  animation: shine 1.5s ease-in-out;
+}
+
+/* Optional: Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0f1b;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Optional: Better font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Flashing Gradient Border Animation for Cards */
+@keyframes flashing-border {
+  0% {
+    border-color: #3b82f6;
+  }
+  50% {
+    border-color: #9333ea;
+  }
+  100% {
+    border-color: #3b82f6;
+  }
+}
+
+.animate-border {
+  animation: flashing-border 3s linear infinite;
+}
